@@ -1276,3 +1276,72 @@ a:focus-visible {
   }
 
 }
+
+
+/* ==========================================
+   CORREÇÃO FINAL — TEMA ESCURO EM TODOS OS DISPOSITIVOS
+========================================== */
+
+html {
+  background: #343941 !important;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #343941 !important;
+}
+
+body {
+  color: #F1E8DE;
+  color-scheme: dark;
+}
+
+.night-sky {
+  background:
+    radial-gradient(
+      ellipse at 15% 15%,
+      rgba(217,160,107,.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(184,92,69,.14),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #555b65,
+      #484e58,
+      #414751
+    ) !important;
+}
+
+/* Impede alterações automáticas de cores em telas pequenas */
+@media (max-width: 600px) {
+  html,
+  body {
+    background-color: #343941 !important;
+    color-scheme: dark;
+  }
+
+  .night-sky {
+    background:
+      radial-gradient(
+        ellipse at 15% 15%,
+        rgba(217,160,107,.18),
+        transparent 45%
+      ),
+      radial-gradient(
+        ellipse at 85% 75%,
+        rgba(184,92,69,.14),
+        transparent 45%
+      ),
+      linear-gradient(
+        135deg,
+        #555b65,
+        #484e58,
+        #414751
+      ) !important;
+  }
+}
