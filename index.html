@@ -414,6 +414,127 @@
 
 
   <script src="script.js"></script>
+<!-- TELA DE ENTRADA -->
+<div class="intro-screen" id="introScreen">
+  <div class="intro-content">
+
+    <p class="intro-question">
+      Eai, quer dar uma olhada no meu portfólio?
+    </p>
+
+    <button class="intro-button" id="introButton">
+      Sim
+    </button>
+
+  </div>
+</div>
+
+<!-- MÚSICA -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+  </section>
+
+  <script src="script.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const introScreen = document.getElementById("introScreen");
+    const introButton = document.getElementById("introButton");
+    const bgMusic = document.getElementById("bgMusic");
+
+    if (!introScreen || !introButton || !bgMusic) {
+      console.error("Elementos da tela inicial não encontrados.");
+      return;
+    }
+
+    introButton.addEventListener("click", function () {
+
+      bgMusic.volume = 0.3;
+
+      bgMusic.play().catch(function (error) {
+        console.log("Erro ao iniciar a música:", error);
+      });
+
+      introScreen.classList.add("hidden");
+
+    });
+
+  });
+  </script>
 
 </body>
+</html>
+<!-- CONTROLE DE VOLUME -->
+<div class="music-control" id="musicControl">
+  <button class="volume-button" id="volumeButton" type="button" aria-label="Controle de volume">
+    🔊
+  </button>
+
+  <input
+    type="range"
+    id="volumeSlider"
+    class="volume-slider"
+    min="0"
+    max="1"
+    step="0.01"
+    value="0.5"
+    aria-label="Volume"
+  >
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const bgMusic = document.getElementById("bgMusic");
+  const volumeButton = document.getElementById("volumeButton");
+  const volumeSlider = document.getElementById("volumeSlider");
+
+  // Volume inicial
+  bgMusic.volume = 0.5;
+
+  // Controle da barra de volume
+  volumeSlider.addEventListener("input", function () {
+
+    bgMusic.volume = Number(this.value);
+
+    if (bgMusic.volume === 0) {
+      volumeButton.textContent = "🔇";
+    } else if (bgMusic.volume < 0.5) {
+      volumeButton.textContent = "🔉";
+    } else {
+      volumeButton.textContent = "🔊";
+    }
+
+  });
+
+  // Botão de mutar/desmutar
+  volumeButton.addEventListener("click", function () {
+
+    if (bgMusic.volume > 0) {
+
+      bgMusic.dataset.lastVolume = bgMusic.volume;
+
+      bgMusic.volume = 0;
+      volumeSlider.value = 0;
+
+      volumeButton.textContent = "🔇";
+
+    } else {
+
+      const lastVolume = Number(bgMusic.dataset.lastVolume) || 0.5;
+
+      bgMusic.volume = lastVolume;
+      volumeSlider.value = lastVolume;
+
+      volumeButton.textContent =
+        lastVolume < 0.5 ? "🔉" : "🔊";
+    }
+
+  });
+
+});
+</script>
+</body>
+
 </html>

@@ -86,3 +86,20 @@ btnVoltar.addEventListener("click", () => {
   }, 500);
 
 });
+const introScreen = document.getElementById("introScreen");
+const introButton = document.getElementById("introButton");
+const bgMusic = document.getElementById("bgMusic");
+
+introButton.addEventListener("click", () => {
+
+  // Começa a música
+  bgMusic.volume = 0.5;
+
+  bgMusic.play().catch((error) => {
+    console.log("Não foi possível iniciar a música:", error);
+  });
+
+  // Fecha a tela de entrada
+  introScreen.classList.add("hidden");
+
+});
