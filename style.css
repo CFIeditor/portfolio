@@ -528,6 +528,7 @@ body {
   border-radius: 50px;
 
   color: #D9A06B;
+  
 
   font-size: .8rem;
   font-weight: 700;
@@ -1344,4 +1345,123 @@ body {
         #414751
       ) !important;
   }
+}
+/* ==========================================
+   NOVAS REDES — X E YOUTUBE
+========================================== */
+
+.btn-x,
+.btn-youtube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+
+/* ==========================================
+   X / TWITTER
+========================================== */
+
+.btn-x {
+  background: linear-gradient(
+    135deg,
+    #111111,
+    #2b2b2b
+  );
+
+  border: 1px solid rgba(241,232,222,.18);
+}
+
+.btn-x:hover {
+  background: linear-gradient(
+    135deg,
+    #000000,
+    #3a3a3a
+  );
+
+  border-color: rgba(241,232,222,.45);
+}
+
+
+/* ==========================================
+   YOUTUBE
+========================================== */
+
+.btn-youtube {
+  background: linear-gradient(
+    135deg,
+    #b00000,
+    #ff0000
+  );
+
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.btn-youtube:hover {
+  background: linear-gradient(
+    135deg,
+    #8f0000,
+    #ff2020
+  );
+
+  border-color: rgba(255,255,255,.3);
+}
+
+
+/* ==========================================
+   PROTEÇÃO DO FUNDO
+========================================== */
+
+html {
+  background-color: #343941 !important;
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #343941 !important;
+}
+/* ==========================================
+   ÍCONES DAS REDES SOCIAIS
+========================================== */
+
+.redes a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Instagram */
+.btn-instagram .social-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Discord */
+.btn-discord .social-icon {
+  width: 23px;
+  height: 23px;
+}
+
+/* X */
+.btn-x .social-icon {
+  width: 21px;
+  height: 21px;
+  
+}
+
+/* YouTube */
+.btn-youtube .social-icon {
+  width: 23px;
+  height: 23px;
 }
